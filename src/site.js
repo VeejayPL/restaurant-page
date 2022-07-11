@@ -1,4 +1,9 @@
 "use strict";
+
+import loadHome from "./home";
+import loadMenu from "./menu";
+import loadContact from "./contact";
+
 const initializeWebsite = (() => {
   const content = document.querySelector("#content");
 
@@ -27,16 +32,41 @@ const initializeWebsite = (() => {
     return nav;
   };
 
-  const createButton = (name) => {
+  const createButton = (section) => {
     const button = document.createElement("button");
     button.classList.add("nav-button");
-    button.textContent = name;
+    button.textContent = section;
 
-    button.addEventListener("click", () => {
-      console.log("Clicked " + name);
+    button.addEventListener("click", (e) => {
+      if (e.target.classList.contains("active")) return;
+      main.textContent = "";
+      if (section === "Home") {
+        setActiveSection("Home");
+        loadHome();
+      }
+      if (section === "Menu") {
+        setActiveSection("Menu");
+        loadMenu();
+      }
+      if (section === "Contact") {
+        setActiveSection("Contact");
+        loadContact();
+      }
     });
 
     return button;
+  };
+
+  const setActiveSection = (section) => {
+    const buttons = document.querySelectorAll(".nav-button");
+
+    buttons.forEach((button) => {
+      if (button.textContent !== section) {
+        button.classList.remove("active");
+      } else {
+        button.classList.add("active");
+      }
+    });
   };
 
   const createMain = () => {
@@ -68,8 +98,6 @@ const initializeWebsite = (() => {
   content.appendChild(createHeader());
   content.appendChild(createMain());
   content.appendChild(createFooter());
-
-  return { content };
 })();
 
 export default initializeWebsite;
