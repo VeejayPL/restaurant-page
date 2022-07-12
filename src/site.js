@@ -74,11 +74,6 @@ const initializeWebsite = (() => {
     main.setAttribute("id", "main");
     main.classList.add("main");
 
-    const description = document.createElement("p");
-    description.textContent = "I am main";
-
-    main.appendChild(description);
-
     return main;
   };
 
@@ -98,6 +93,9 @@ const initializeWebsite = (() => {
   content.appendChild(createHeader());
   content.appendChild(createMain());
   content.appendChild(createFooter());
+
+  setActiveSection("Home");
+  loadHome();
 })();
 
 export default initializeWebsite;
