@@ -10,22 +10,27 @@ const createMenu = () => {
     const pizzaCard = document.createElement("div");
     pizzaCard.classList.add("menu-card");
 
+    const pizzaInfo = document.createElement("div");
+    pizzaInfo.classList.add("card-info");
+
     const pizzaName = document.createElement("h2");
     pizzaName.classList.add("card-title");
     pizzaName.textContent = name;
 
-    const pizzaInfo = document.createElement("p");
-    pizzaInfo.classList.add("card-description");
-    pizzaInfo.textContent = info;
+    const pizzaDescription = document.createElement("p");
+    pizzaDescription.classList.add("card-description");
+    pizzaDescription.textContent = info;
 
     const pizzaImage = document.createElement("img");
     pizzaImage.classList.add("card-image");
     pizzaImage.src = `./images/${name}.png`;
     pizzaImage.alt = `Pizza ${name}`;
 
-    pizzaCard.appendChild(pizzaName);
-    pizzaCard.appendChild(pizzaInfo);
+    pizzaInfo.appendChild(pizzaName);
+    pizzaInfo.appendChild(pizzaDescription);
+
     pizzaCard.appendChild(pizzaImage);
+    pizzaCard.appendChild(pizzaInfo);
 
     return pizzaCard;
   };
