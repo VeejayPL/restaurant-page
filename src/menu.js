@@ -23,7 +23,7 @@ const createMenu = () => {
 
     const pizzaImage = document.createElement("img");
     pizzaImage.classList.add("card-image");
-    pizzaImage.src = `./images/${name}.png`;
+    pizzaImage.src = `./images/${name.toLowerCase()}.png`;
     pizzaImage.alt = `Pizza ${name}`;
 
     pizzaInfo.appendChild(pizzaName);
