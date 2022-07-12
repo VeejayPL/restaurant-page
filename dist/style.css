@@ -1,0 +1,141 @@
+:root {
+  --primary-background: #fdfdff;
+  --secondary-background: #edede9;
+  --field: #9ea7a7;
+  --button: #6eb0c4;
+  --button-notread-hover: #ff3333;
+  --font: #100b00;
+  --font-winner: #d00000;
+  --spacing-xs: 5px;
+  --spacing-sm: 10px;
+  --spacing-md: 15px;
+  --spacing-lg: 20px;
+  --spacing-xl: 40px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: var(--primary-background);
+  color: var(--font);
+}
+
+.content {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Header */
+.header {
+  width: 100%;
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid;
+}
+.header-title {
+  font-family: cursive;
+  font-size: 4rem;
+}
+.nav-button {
+  position: relative;
+  padding: var(--spacing-lg);
+  font-size: inherit;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 300ms;
+  outline: none;
+}
+.nav-button:hover {
+  transform: translateY(-10px);
+}
+.nav-button::before {
+  content: "";
+  background: black;
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  transition: width 100ms ease-in;
+}
+
+.nav-button.active::before {
+  width: 100%;
+  outline: none;
+}
+.main {
+  padding: var(--spacing-lg);
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  padding: var(--spacing-md);
+  text-align: center;
+  border: 1px solid;
+}
+
+/* Menu */
+.menu {
+  padding: var(--spacing-lg);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: var(--spacing-md);
+  border: 1px solid red;
+}
+
+.menu-card {
+  height: 300px;
+  width: 300px;
+  border: 1px solid;
+}
+
+/* Animation */
+.content,
+.home,
+.menu,
+.contact {
+  animation: fadein 1s forwards;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 700px) {
+  :root {
+    --spacing-xl: 20px;
+  }
+  .menu {
+    grid-template-columns: 1fr;
+  }
+  .menu-card {
+    height: 200px;
+    width: 280px;
+  }
+}
