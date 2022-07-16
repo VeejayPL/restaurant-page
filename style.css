@@ -31,6 +31,9 @@ body {
   background: var(--field);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   scroll-behavior: smooth;
+  background: url(./images/backround.jpg);
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .content {
@@ -39,7 +42,6 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  /* background: var(--field); */
   color: var(--primary-background);
 }
 
@@ -50,7 +52,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid;
 }
 .header-title {
   font-family: cursive;
@@ -79,7 +80,7 @@ body {
   bottom: 0;
   height: 2px;
   width: 0;
-  transition: width 100ms ease-in;
+  transition: width 200ms ease-in;
 }
 
 .nav-button.active::before {
@@ -93,10 +94,22 @@ body {
 /* Footer */
 .footer {
   width: 100%;
-  /* background: var(--field); */
   padding: var(--spacing-md);
   text-align: center;
-  border: 1px solid;
+}
+
+/* Home */
+.home {
+  height: auto;
+  /* background: rgba(255, 255, 255, 0.9);
+  border-radius: 32px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+  backdrop-filter: blur(8px);
+}
+
+.home p span {
+  opacity: 0;
+  animation: fadein 1s forwards;
 }
 
 /* Menu */
@@ -105,7 +118,8 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: var(--spacing-md);
-  border: 1px solid red;
+  background: rgba(7, 7, 7, 0.5);
+  border-radius: 32px;
 }
 
 .menu-card {
@@ -115,7 +129,6 @@ body {
   grid-template-rows: minmax(100%, 1fr);
   grid-template-areas: "stack";
   overflow: hidden;
-  /* border: 1px solid; */
 }
 .card-image,
 .card-info {
@@ -128,8 +141,9 @@ body {
 }
 .card-info {
   padding: var(--spacing-sm);
+  border-radius: 16px 16px 0 0;
   background-color: #242424e0;
-  backdrop-filter: blur(16px);
+  backdrop-filter: blur(8px);
   transform: translateY(calc(100% - 3rem));
   transition: transform 600ms;
 }
@@ -141,8 +155,8 @@ body {
 }
 
 /* Animation */
-.content,
-.home,
+/* .content, */
+/* .home, */
 .menu,
 .contact {
   animation: fadein 1s forwards;
@@ -160,6 +174,9 @@ body {
 @media (max-width: 700px) {
   :root {
     --spacing-xl: 20px;
+  }
+  body {
+    background-image: url(./images/mobile-bckgr.jpg);
   }
   .menu {
     grid-template-columns: 1fr;
