@@ -27,7 +27,7 @@ html {
 body {
   font-size: 18px;
   font-weight: 400;
-  background: var(--field);
+  /* background: var(--gray); */
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   scroll-behavior: smooth;
 }
@@ -101,10 +101,32 @@ body {
 
 /* Home */
 .home {
-  height: auto;
+  background: url(./images/restaurant.svg);
+
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 800px;
+  height: 400px;
+  color: var(--navy);
+  font-weight: 600;
+}
+.home-info {
+  background-color: var(--navy);
+  color: var(--primary-background);
+  padding: var(--spacing-sm);
+  border-radius: 0 10px 0 10px;
+  width: clamp(350px, 50%, 1000px);
+  align-self: center;
 }
 
-.home p span {
+.home-hours {
+  align-self: flex-end;
+  text-align: right;
+}
+
+.home span {
   opacity: 0;
   animation: fadein 1s forwards;
 }
