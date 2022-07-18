@@ -72,7 +72,7 @@ body {
 }
 .nav-button::before {
   content: "";
-  background: var(--primary-background);
+  background: var(--navy);
   display: block;
   position: absolute;
   left: 0;
@@ -80,6 +80,9 @@ body {
   height: 2px;
   width: 0;
   transition: width 200ms ease-in;
+}
+.nav-button.active {
+  color: var(--navy);
 }
 
 .nav-button.active::before {
