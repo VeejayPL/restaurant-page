@@ -3,9 +3,6 @@ const createMenu = () => {
   const menu = document.createElement("div");
   menu.classList.add("menu");
 
-  const check = document.createElement("p");
-  check.textContent = "Menu";
-
   const createPizzaCard = (name, info) => {
     const pizzaCard = document.createElement("div");
     pizzaCard.classList.add("menu-card");
@@ -23,7 +20,7 @@ const createMenu = () => {
 
     const pizzaImage = document.createElement("img");
     pizzaImage.classList.add("card-image");
-    pizzaImage.src = `./images/${name.toLowerCase()}.png`;
+    pizzaImage.src = `./images/${name.toLowerCase()}.jpg`;
     pizzaImage.alt = `Pizza ${name}`;
 
     pizzaInfo.appendChild(pizzaName);
@@ -36,16 +33,23 @@ const createMenu = () => {
   };
 
   menu.appendChild(
-    createPizzaCard("Margharita", "Just a dough with pomodoro sauce")
+    createPizzaCard("Margharita", "Tomato sauce, cheese, oregano")
+  );
+  menu.appendChild(createPizzaCard("Vesuvio", "Tomato sauce, cheese, ham"));
+  menu.appendChild(
+    createPizzaCard("Capriciossa", "Tomato sauce, cheese, ham, oregano")
   );
   menu.appendChild(
-    createPizzaCard("Margharita", "Just a dough with pomodoro sauce")
+    createPizzaCard("Prosciutto", "Tomato sauce, cheese, ham, arugula, oregano")
   );
   menu.appendChild(
-    createPizzaCard("Margharita", "Just a dough with pomodoro sauce")
+    createPizzaCard("Havai", "Tomato sauce, cheese, ham, pineapple, oregano")
   );
   menu.appendChild(
-    createPizzaCard("Margharita", "Just a dough with pomodoro sauce")
+    createPizzaCard(
+      "Amore",
+      "Tomato sauce, cheese, chicken, arugula, cherry tomato"
+    )
   );
 
   return menu;
