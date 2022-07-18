@@ -13,8 +13,7 @@ const initializeWebsite = (() => {
 
     const title = document.createElement("h1");
     title.classList.add("header-title");
-    title.textContent = "Pizzeria";
-
+    title.textContent = "Ristorante";
     header.appendChild(title);
     header.appendChild(createNav());
 
