@@ -1,10 +1,10 @@
 :root {
   --primary-background: #fdfdff;
-  --secondary-background: #edede9;
   --orange: #ef5c36;
-  --gray: #dcdce0;
-  --navy: #08303e;
   --navy-transparent: rgba(8, 48, 62, 0.8);
+  --navy: #08303e;
+  --green: #029b3f;
+  --gray: #dcdce0;
   --spacing-xs: 5px;
   --spacing-sm: 10px;
   --spacing-md: 15px;
@@ -32,7 +32,7 @@ body {
 }
 
 .content {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -105,14 +105,14 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-width: 800px;
-  height: 400px;
+  max-width: 1000px;
+  height: 500px;
   color: var(--navy);
   font-weight: 600;
 }
 .home-info {
   background-color: var(--navy);
-  color: var(--primary-background);
+  color: var(--green);
   padding: var(--spacing-sm);
   border-radius: 0 10px 0 10px;
   width: clamp(350px, 50%, 1000px);
