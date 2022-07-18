@@ -9,6 +9,9 @@ const createHome = () => {
   const hours = document.createElement("div");
   hours.classList.add("home-hours");
 
+  const setActiveClass = () => hours.classList.add("active");
+  setTimeout(setActiveClass, 100);
+
   hours.appendChild(addText("7 DAYS A WEEK", "p"));
   hours.appendChild(addText("4PM - 9PM", "p"));
   hours.appendChild(addText("DINE-IN", "p"));
