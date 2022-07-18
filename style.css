@@ -38,6 +38,7 @@ body {
   justify-content: space-between;
   align-items: center;
   color: var(--primary-background);
+  overflow: hidden;
 }
 
 /* Header */
@@ -125,6 +126,11 @@ body {
 .home-hours {
   align-self: flex-end;
   text-align: right;
+  transform: translateX(300px);
+  transition: transform 600ms;
+}
+.home-hours.active {
+  transform: translateX(0px);
 }
 
 .home span {
