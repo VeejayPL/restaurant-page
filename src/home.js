@@ -35,7 +35,6 @@ const fadeInText = (text, element, speed) => {
   paragraph.classList.add(`${element}-animated`);
 
   const characters = Array.from(text);
-  console.log(characters);
 
   characters.forEach((character, index) => {
     const span = document.createElement("span");
@@ -47,7 +46,9 @@ const fadeInText = (text, element, speed) => {
   const removeSpanTag = () => {
     paragraph.textContent = text;
   };
+
   setTimeout(removeSpanTag, 4000);
+
   return paragraph;
 };
 
