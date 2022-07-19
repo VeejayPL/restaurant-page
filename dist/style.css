@@ -182,7 +182,47 @@ body {
 
 /* Contact */
 .contact {
+  height: 500px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   color: var(--navy);
+}
+.contact-header {
+  align-self: center;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+.contact-input {
+  border-radius: 8px;
+  border: 2px solid var(--orange);
+  padding: var(--spacing-sm);
+}
+.contact-input:focus {
+  outline-color: var(--green);
+}
+.contact-button {
+  padding: var(--spacing-sm);
+  border: none;
+  border-radius: 8px;
+  background-color: var(--navy);
+  color: var(--green);
+  font-weight: 600;
+  transition: color 600ms, transform 50ms;
+}
+.contact-button:hover {
+  background-color: var(--green);
+  color: var(--navy);
+}
+.contact-button:active {
+  transform: scale(1.05);
+}
+.contact-alert {
+  align-self: center;
 }
 
 /* Animation */
